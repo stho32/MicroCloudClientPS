@@ -1,5 +1,5 @@
 # MicroCloudClientPS
-A powershell client module for the microcloud Client API (users perspective)
+A powershell client module for the MicroCloud Client API (users perspective)
 
 Essentially you have a [MicroCloud](https://github.com/stho32/MicroCloud) up and running. You are on a developers computer and you need like build services, test environments or stuff like that.
 
