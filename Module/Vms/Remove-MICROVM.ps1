@@ -12,7 +12,7 @@ function Remove-MICROVM {
     process {
         $apiKey = $global:MICROCLOUD_ApiKey
 
-        $uri = "http://microcloud:8080/Vm/New?apiKey=$apiKey&vmName=$Name"
+        $uri = "http://microcloud:8080/Vm/RemoveVm?apiKey=$apiKey&vmName=$Name"
         Invoke-RestMethod -Uri $uri -Method Get
     }
 }
