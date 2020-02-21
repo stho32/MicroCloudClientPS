@@ -7,7 +7,9 @@ function Add-MICROVM {
     param (
         [Parameter(Mandatory=$true)]
         [ValidateSet("VS2019-Image", "Windows-10-Pro-MicroCloud-Image", "Basis-Windows-Server-2019-Image")]
-        [string]$BaseImage
+        [string]$BaseImage,
+        [ValidateSet(4,8,16)]
+        [int]$RamInGb = 4
     )
     
     process {
