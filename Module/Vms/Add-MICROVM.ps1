@@ -15,7 +15,7 @@ function Add-MICROVM {
     process {
         $apiKey = $global:MICROCLOUD_ApiKey
 
-        $uri = "http://microcloud:8080/Vm/New?apiKey=$apiKey&baseImage=$BaseImage"
+        $uri = "http://microcloud:8080/Vm/New?apiKey=$apiKey&baseImage=$BaseImage&RamInGb=$RamInGb"
         Invoke-RestMethod -Uri $uri -Method Get
     }
 }
