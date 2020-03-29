@@ -6,7 +6,14 @@ function Add-MICROVM {
     [CmdletBinding()]
     param (
         [Parameter(Mandatory=$true)]
-        [ValidateSet("VS2019-Image", "Windows-10-Pro-MicroCloud-Image", "Basis-Windows-Server-2019-Image", "Testdatenbanken-Image", "UbuntuServer-18.04-Image")]
+        [ArgumentCompleter({
+            param (
+                $CommandName, $ParameterName, $WordToComplete, $CommandAst, $FakeBoundParameters
+            )
+
+            ((Get-MICROImage) | Where-Object Name -like "*$WordToComplete*").Name
+        })]
+        [ValidateScript({Get-MICROImage | Where-Object Name -eq $_})]
         [string]$BaseImage,
         [ValidateSet(4,8,16,26)]
         [int]$RamInGb = 4
