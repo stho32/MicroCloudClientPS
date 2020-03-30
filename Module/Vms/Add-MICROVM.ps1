@@ -13,7 +13,7 @@ function Add-MICROVM {
 
             ((Get-MICROImage) | Where-Object Name -like "*$WordToComplete*").Name
         })]
-        [ValidateScript({Get-MICROImage | Where-Object Name -eq $_})]
+        [ValidateScript({((Get-MICROImage) | Where-Object Name -eq $_)})]
         [string]$BaseImage,
         [ValidateSet(4,8,16,26)]
         [int]$RamInGb = 4
